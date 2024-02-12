@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import AboutUs from './components/AboutUs'
-import UploadJob from './components/UploadJob'
-import FindJobs from './components/FindJobs'
-import Companies from './components/Companies'
-import Header from './components/Header'
+import Home from './components/Home/Home'
+import AboutUs from './components/AboutUs/AboutUs'
+import UploadJob from './components/UploadJob/UploadJob'
+import FindJobs from './components/FindJobs/FindJobs'
+import Companies from './components/Companies/Companies'
+import Header from './components/Header/Header'
 
 
 function App() {
