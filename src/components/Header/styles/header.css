@@ -80,7 +80,7 @@ body {
 
 
 img{
-  height: 1.3rem;
+  height: 1rem;
   
 }
 
@@ -150,6 +150,7 @@ img{
   background-color: transparent;
   border-color: black;
   border-radius: 10%;
+  border-width: 0.1rem;
 }
 
 @media (max-width: 659px) {

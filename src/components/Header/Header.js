@@ -21,11 +21,10 @@ function Header() {
               <img src={sidebar} />
             </button>
             <ul className={"nav__wrapper"+(isNavActive?" active":"")}>
-              <Link to='/' className="nav__item">Home</Link>
-              <Link to='/about-us' className="nav__item">About Us</Link>
-              <Link to='/find-jobs' className="nav__item">Find Jobs</Link>
-              <Link to='/upload-job' className="nav__item">Upload Job</Link>
-              <Link to='/companies' className="nav__item">Companies</Link>
+              <Link onClick={handleNavToggle} to='/' className="nav__item">Jobs</Link>
+              <Link onClick={handleNavToggle} to='/upload-job' className="nav__item">Upload Job</Link>
+              <Link onClick={handleNavToggle} to='/companies' className="nav__item">Companies</Link>
+              <Link onClick={handleNavToggle} to='/about-us' className="nav__item">About Us</Link>
             </ul>
           </nav>
         </div>
