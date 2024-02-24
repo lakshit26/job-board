@@ -1,113 +1,204 @@
-export default jobs = [          
-    {
-      "id": 1,
-      "title": "Frontend Developer",
-      "company": "TechCo",
-      "location": "San Francisco, CA",
-      "description": "We're looking for a talented frontend developer to join our team. You'll be responsible for building user interfaces and implementing features using HTML, CSS, and JavaScript frameworks like React.",
-      "requirements": ["Proficiency in HTML, CSS, and JavaScript", "Experience with React or similar frontend frameworks", "Strong problem-solving skills"],
-      "salary": "$80,000 - $100,000 per year",
-      "postedDate": "2024-02-07",
-      "category": "Software Development"
+const jobs = [
+  {
+    "id": 1,
+    "title": "Software Engineer",
+    "company": "InnoTech",
+    "location": "Mountain View, CA",
+    "description":
+      "We are looking for a talented software engineer to join our team and work on cutting-edge projects. You will be responsible for designing, developing, and testing complex software systems.",
+    "skills": ["Python", "Java", "C++", "Data Structures", "Algorithms"],
+    "responsibilities": [
+      "Design, develop, and test software systems.",
+      "Collaborate with other engineers on product development.",
+      "Stay up-to-date on the latest technologies.",
+      "Write clean, maintainable, and efficient code.",
+      "Troubleshoot and debug complex software issues.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 100000, 
+      "max": 150000, 
     },
-    {
-      "id": 2,
-      "title": "UX/UI Designer",
-      "company": "DesignHub",
-      "location": "New York, NY",
-      "description": "We're seeking a creative UX/UI designer to join our design team. You'll collaborate with product managers and developers to create intuitive and visually appealing user interfaces.",
-      "requirements": ["Proficiency in design tools like Sketch, Figma, or Adobe XD", "Experience with user research and usability testing", "Strong portfolio showcasing design skills"],
-      "salary": "$70,000 - $90,000 per year",
-      "postedDate": "2024-02-06",
-      "category": "Design"
+  },
+  {
+    "id": 2,
+    "title": "Data Scientist",
+    "company": "Insights Inc.",
+    "location": "Menlo Park, CA",
+    "description":
+      "We are seeking a data scientist to join our team and help us make data-driven decisions. You will be responsible for collecting, analyzing, and interpreting data to solve real-world problems.",
+    "skills": ["Python", "R", "Statistics", "Machine Learning", "Data Visualization"],
+    "responsibilities": [
+      "Collect, clean, and analyze data from various sources.",
+      "Develop and implement machine learning models to solve specific problems.",
+      "Communicate insights and findings to stakeholders in a clear and concise manner.",
+      "Stay up-to-date on the latest data science techniques and tools.",
+      "Collaborate with engineers and other data scientists on projects.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 125000, 
+      "max": 150000, 
     },
-    {
-      "id": 3,
-      "title": "Data Scientist",
-      "company": "DataAnalytics Inc.",
-      "location": "Seattle, WA",
-      "description": "We're hiring a data scientist to analyze large datasets and extract valuable insights. You'll use machine learning algorithms and statistical techniques to solve complex business problems.",
-      "requirements": ["Proficiency in Python and data analysis libraries like Pandas and NumPy", "Experience with machine learning techniques and algorithms", "Strong communication and presentation skills"],
-      "salary": "$90,000 - $120,000 per year",
-      "postedDate": "2024-02-05",
-      "category": "Data Science"
+  },
+  {
+    "id": 3,
+    "title": "Front-End Developer",
+    "company": "Pixel Craft",
+    "location": "Seattle, WA",
+    "description":
+      "We are looking for a front-end developer to join our team and build user-friendly web applications. You will be responsible for designing, developing, and testing the user interface of our products.",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Angular"],
+    "responsibilities": [
+      "Design and develop user interfaces using best practices and accessibility guidelines.",
+      "Build responsive web applications that work across different devices and browsers.",
+      "Write clean, maintainable, and efficient code.",
+      "Collaborate with back-end developers and designers on projects.",
+      "Stay up-to-date on the latest front-end development trends and technologies.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 30000, 
+      "max": 50000, 
     },
-    {
-      "id": 4,
-      "title": "Marketing Manager",
-      "company": "MarketingPro",
-      "location": "Chicago, IL",
-      "description": "We're seeking a dynamic marketing manager to develop and execute marketing campaigns. You'll be responsible for creating content, managing social media channels, and analyzing campaign performance.",
-      "requirements": ["Bachelor's degree in marketing or related field", "Proven experience in marketing or advertising", "Strong analytical and project management skills"],
-      "salary": "$60,000 - $80,000 per year",
-      "postedDate": "2024-02-04",
-      "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "Backend Developer",
+    "company": "Connex Systems",
+    "location": "Redmond, WA",
+    "description":
+      "We are seeking a backend developer to join our team and develop robust and scalable web services. You will be responsible for designing, developing, and testing the backend infrastructure of our applications.",
+    "skills": ["Java", "Python", "Node.js", "Databases", "APIs"],
+    "responsibilities": [
+      "Design, develop, and test APIs and web services.",
+      "Build and maintain databases.",
+      "Write clean, maintainable, and efficient code.",
+      "Troubleshoot and debug complex backend issues.",
+      "Collaborate with front-end developers and DevOps engineers on projects.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 30000, 
+      "max": 80000, 
     },
-    {
-      "id": 5,
-      "title": "Product Manager",
-      "company": "Product Innovations",
-      "location": "Austin, TX",
-      "description": "We're looking for a product manager to drive product development and strategy. You'll work closely with cross-functional teams to define product requirements, prioritize features, and launch new products.",
-      "requirements": ["Bachelor's degree in business, engineering, or related field", "Proven experience in product management or related roles", "Strong leadership and communication skills"],
-      "salary": "$100,000 - $120,000 per year",
-      "postedDate": "2024-02-03",
-      "category": "Product Management"
+  },
+  {
+    "id": 5,
+    "title": "Product Manager",
+    "company": "InnovateX",
+    "location": "Cupertino, CA",
+    "description":
+      "We are looking for a product manager to join our team and lead the development of innovative new products. You will be responsible for defining product vision, conducting market research, and managing the product development lifecycle.",
+    "skills": ["Product Management", "Market Research", "Product Development", "Communication", "Leadership"],
+    "responsibilities": [
+      "Define product vision and roadmap.",
+      "Conduct market research and analyze user needs.",
+      "Manage the product development process from ideation to launch.",
+      "Collaborate with cross-functional teams (engineering, design, marketing).",
+      "Communicate product vision and strategy effectively to stakeholders.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 100000, 
+      "max": 250000, 
     },
-    {
-      "id": 6,
-      "title": "Software Engineer",
-      "company": "TechSolutions",
-      "location": "Los Angeles, CA",
-      "description": "We're hiring a software engineer to design, develop, and maintain software applications. You'll collaborate with a team of engineers to build scalable and reliable software solutions.",
-      "requirements": ["Bachelor's degree in computer science or related field", "Proficiency in programming languages like Java, Python, or C++", "Experience with software development methodologies like Agile or Scrum"],
-      "salary": "$90,000 - $110,000 per year",
-      "postedDate": "2024-02-02",
-      "category": "Software Development"
+  },
+  {
+    "id": 6,
+    "title": "Graphic Designer",
+    "company": "Creative Spark",
+    "location": "San Jose, CA",
+    "description":
+      "We are looking for a talented graphic designer to join our team and create visually appealing and engaging content. You will be responsible for designing graphics for various marketing materials, social media, and our website.",
+    "skills": ["Graphic Design", "Adobe Photoshop", "Adobe Illustrator", "UI/UX Design", "Typography"],
+    "responsibilities": [
+      "Develop creative concepts for visual content based on client briefs and brand guidelines.",
+      "Design graphics for marketing materials (brochures, flyers, presentations).",
+      "Create social media graphics (posts, banners, stories).",
+      "Design user interfaces (UI) and user experiences (UX) for web and mobile applications.",
+      "Collaborate with copywriters and marketing teams on projects.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 50000, 
+      "max": 90000, 
     },
-    {
-      "id": 7,
-      "title": "Financial Analyst",
-      "company": "FinanceCorp",
-      "location": "Boston, MA",
-      "description": "We're seeking a financial analyst to analyze financial data and provide insights to support business decisions. You'll prepare financial reports, forecast trends, and evaluate investment opportunities.",
-      "requirements": ["Bachelor's degree in finance, accounting, or related field", "Strong analytical and quantitative skills", "Experience with financial modeling and data analysis tools"],
-      "salary": "$70,000 - $90,000 per year",
-      "postedDate": "2024-02-01",
-      "category": "Finance"
+  },
+  {
+    "id": 7,
+    "title": "Content Writer",
+    "company": "Wordsmith Inc.",
+    "location": "Boston, MA",
+    "description":
+      "We are seeking a skilled content writer to join our team and create engaging and informative content for our website, blog, and social media channels. You will be responsible for researching, writing, and editing various types of content, including blog posts, articles, website copy, and social media captions.",
+    "skills": ["Content Writing", "SEO", "Content Marketing", "Editing","Grammar"],
+    "responsibilities": [
+      "Conduct research and gather information on assigned topics.",
+      "Write clear, concise, and engaging content that resonates with the target audience.",
+      "Optimize content for search engines (SEO) to improve website traffic.",
+      "Edit and proofread content for grammar, spelling, and clarity.",
+      "Collaborate with editors and marketing teams on content strategy and development.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 25000, 
+      "max": 50000, 
     },
-    {
-      "id": 8,
-      "title": "Human Resources Manager",
-      "company": "HR Solutions",
-      "location": "Houston, TX",
-      "description": "We're looking for an HR manager to oversee all aspects of human resources operations. You'll be responsible for recruitment, employee relations, performance management, and HR compliance.",
-      "requirements": ["Bachelor's degree in human resources, business administration, or related field", "Proven experience in HR management or related roles", "Knowledge of labor laws and regulations"],
-      "salary": "$80,000 - $100,000 per year",
-      "postedDate": "2024-01-31",
-      "category": "Human Resources"
+  },
+  {
+    "id": 8,
+    "title": "Marketing Manager",
+    "company": "Growth Strategies",
+    "location": "San Francisco, CA",
+    "description":
+      "We are looking for a passionate marketing manager to join our team and develop and execute marketing campaigns that drive brand awareness, lead generation, and sales. You will be responsible for creating and managing marketing budgets, developing marketing strategies, and analyzing campaign performance.",
+    "skills": ["Marketing", "Marketing Strategy", "Campaign Management", "Analytics", "Communication"],
+    "responsibilities": [
+      "Develop and implement comprehensive marketing plans and strategies.",
+      "Manage marketing budgets and track return on investment (ROI).",
+      "Create and execute marketing campaigns across various channels (online, offline, social media).",
+      "Analyze marketing campaign performance and make data-driven decisions.",
+      "Collaborate with cross-functional teams (sales, product, design) to achieve marketing goals.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 15000, 
+      "max": 50000, 
     },
-    {
-      "id": 9,
-      "title": "Customer Success Manager",
-      "company": "CustomerFirst",
-      "location": "Denver, CO",
-      "description": "We're seeking a customer success manager to build and maintain strong relationships with our clients. You'll be the main point of contact for customer inquiries, feedback, and escalations.",
-      "requirements": ["Bachelor's degree in business, marketing, or related field", "Experience in customer success, account management, or customer support", "Excellent communication and problem-solving skills"],
-      "salary": "$75,000 - $95,000 per year",
-      "postedDate": "2024-01-30",
-      "category": "Customer Success"
+  },
+  {
+    "id": 9,
+    "title": "Sales Representative",
+    "company": "Reach Solutions",
+    "location": "Chicago, IL",
+    "description":
+      "We are seeking a driven sales representative to join our team and build relationships with potential customers, identify sales opportunities, and close deals. You will be responsible for prospecting new leads, qualifying leads, and presenting product features and benefits to close deals.",
+    "skills": ["Sales", "Lead Generation", "Communication","Negotiation", "Customer Relationship Management"],
+    "responsibilities": [
+      "Prospect for new leads and qualify them based on sales criteria.",
+      "Develop and maintain relationships with potential and existing customers.",
+      "Present product demos and answer customer questions about features and benefits.",
+      "Negotiate contracts and close deals to achieve sales targets.",
+      "Maintain accurate sales records and reports.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 15000, 
+      "max": 35000, 
     },
-    {
-      "id": 10,
-      "title": "Quality Assurance Engineer",
-      "company": "QA Tech",
-      "location": "Seattle, WA",
-      "description": "We're hiring a QA engineer to ensure the quality and reliability of our software products. You'll design and execute test cases, report bugs, and work closely with development teams to resolve issues.",
-      "requirements": ["Bachelor's degree in computer science, engineering, or related field", "Experience in software testing and quality assurance", "Knowledge of testing tools and methodologies"],
-      "salary": "$80,000 - $100,000 per year",
-      "postedDate": "2024-01-29",
-      "category": "Quality Assurance"
-    }
-  ]
-  
+  },
+  {
+    "id": 10,
+    "title": "Human Resources Specialist",
+    "company": "Talent Bridge",
+    "location": "Los Gatos, CA",
+    "description":
+      "We are looking for a skilled human resources specialist to join our team and support all aspects of the employee lifecycle, from recruitment and onboarding to training and development. You will be responsible for sourcing and screening candidates, conducting interviews, and managing employee relations.",
+    "skills": ["Human Resources", "Recruitment", "Employee Relations", "Training and Development", "Payroll"],
+    "responsibilities": [
+      "Develop and implement recruiting strategies to attract top talent.",
+      "Screen and interview candidates for open positions.",
+      "Onboard new hires and provide them with the necessary training and resources.",
+      "Manage employee relations, including performance reviews, disciplinary actions, and conflict resolution.",
+      "Maintain accurate employee records and ensure compliance with labor laws.",
+    ],
+    "estimatedSalaryRange": {
+      "min": 150000, 
+      "max": 200000, 
+    },
+  },
+];
+
+export default jobs;
