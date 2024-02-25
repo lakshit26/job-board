@@ -13,7 +13,7 @@ function Header() {
     <header className="site-header">
       <div className="wrapper site-header__wrapper">
         <div className="site-header__start">
-        <Link to='/' className="brand">Job Board</Link>
+        <Link to='/' className="brand" onClick={()=>{setIsNavActive(false)}}>Job Board</Link>
         </div>
         <div className="site-header__middle">
           <nav className="nav">

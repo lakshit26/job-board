@@ -5,7 +5,7 @@ import AboutUs from './components/AboutUs/AboutUs'
 import UploadJob from './components/UploadJob/UploadJob'
 import Companies from './components/Companies/Companies'
 import Header from './components/Header/Header'
-
+import JobApply from './components/JobApply/JobApply'
 
 function App() {
   return (
@@ -13,9 +13,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/apply-job' element={<JobApply />} />
         <Route path='/about-us' element={<AboutUs/>} />
-          <Route path='/upload-job' element={<UploadJob/>} />
-          <Route path='/companies' element={<Companies/>} />
+        <Route path='/upload-job' element={<UploadJob/>} />
+        <Route path='/companies' element={<Companies/>} />
       </Routes>
     </BrowserRouter>
 
