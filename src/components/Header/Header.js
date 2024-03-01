@@ -18,7 +18,7 @@ function Header() {
         <div className="site-header__middle">
           <nav className="nav">
             <button onClick={handleNavToggle} className="nav__toggle" aria-expanded="false" type="button">
-              <img src={sidebar} />
+              <img src={sidebar} alt="menu"/>
             </button>
             <ul className={"nav__wrapper"+(isNavActive?" active":"")}>
               <Link onClick={handleNavToggle} to='/' className="nav__item">Jobs</Link>
