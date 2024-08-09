@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import Options from './Options'
 
-const JobFilter = ({category,setCategory,removeSelection,addSelection,emptySelection}) => {
+const JobFilter = ({jobs,category,setCategory,removeSelection,addSelection,emptySelection}) => {
     function handleCategoryChange(e){
         setCategory(e.target.value);
         emptySelection();
@@ -21,6 +21,7 @@ const JobFilter = ({category,setCategory,removeSelection,addSelection,emptySelec
             </div>
             <br/>
             <Options 
+                jobs={jobs}
                 category={category} 
                 removeSelection={removeSelection} 
                 addSelection={addSelection}/>

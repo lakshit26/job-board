@@ -1,15 +1,17 @@
 import React from 'react'
 import JobCard from '../JobCard/JobCard.js'
-import jobs from '../../data.js'
 import './style.css'
 import JobFilter from '../JobFilter/JobFilter.js'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 function Home() {
   
   const [category, setCategory] = useState("job");
   const [selections, setSelections] = useState([]);
+  const [jobs, setJobs] = useState([]);
   console.log(selections);
+
   function handleCategoryChange(temp) {
     setCategory(temp);
   }
@@ -27,6 +29,7 @@ function Home() {
   }
 
   let jobsFiltered=[];
+  // if(jobs.length==0) console.log("empty jobs")
   if(selections.length===0) {
     jobsFiltered=jobs.slice();
   }
@@ -41,11 +44,20 @@ function Home() {
     });
   }
 
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/jobs").then((res)=>{
+      console.log(res)
+      setJobs(res.data);
+    })
+    .catch((err)=>console.log(err))
+  }, [])
+  
   return (
     <>
       <div className="home-container">
         
         <JobFilter 
+          jobs={jobs}
           category={category} 
           setCategory={handleCategoryChange}
           removeSelection={removeSelection} 
