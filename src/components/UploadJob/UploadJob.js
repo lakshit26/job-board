@@ -1,116 +1,205 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import './style.css'
+import deleteImg from "../../delete.png"
 
 function UploadJob() {
+  const [formData, setFormData] = useState({
+    title: "",
+    company: "",
+    description: "",
+    skills: [],
+    city: "",
+    state: "",
+    country: "",
+    responsibilities: [],
+    maxsalary: "",
+    minsalary: ""
+  })
+
+  const [skill, setSkill] = useState("")
+  const [responsibility, setResponsibility] = useState("")
+
+  const handelFormSubmit = (e) => {
+    e.preventDefault();
+    const config = { headers: { "Content-Type": "application/json" } };
+    console.log(formData)
+    axios.post("http://localhost:5000/api/upload/jobs", JSON.stringify(formData), config)
+  }
+
+  const handelInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData({ ...formData, [name]: value });
+  }
+
   return (
     <div>
-      <div class="formbold-main-wrapper">
-        <div class="formbold-form-wrapper">
+      <div className="formbold-main-wrapper">
+        <div className="formbold-form-wrapper">
           {/* <img src="your-image-here.jpg" /> */}
-          <form action="https://formbold.com/s/FORM_ID" method="POST">
-            <div class="formbold-input-flex">
+          <form>
+            <div className="formbold-input-flex">
               <div>
-                <label for="title" class="formbold-form-label"> Job Title </label>
+                <label htmlFor="title" className="formbold-form-label"> Job Title </label>
                 <input
                   type="text"
                   name="title"
                   id="title"
-                  class="formbold-form-input"
+                  className="formbold-form-input"
+                  value={formData.title}
+                  onChange={handelInputChange}
                 />
               </div>
               <div>
-                <label for="company" class="formbold-form-label"> Company </label>
+                <label htmlFor="company" className="formbold-form-label"> Company </label>
                 <input
                   type="text"
                   name="company"
                   id="company"
-                  class="formbold-form-input"
+                  className="formbold-form-input"
+                  value={formData.company}
+                  onChange={handelInputChange}
                 />
               </div>
             </div>
 
             <div>
-                <label for="description" class="formbold-form-label"> Job Description </label>
-                <input
-                  type="text"
-                  name="description"
-                  id="description"
-                  class="formbold-form-input"
-                />
+              <label htmlFor="description" className="formbold-form-label"> Job Description </label>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                className="formbold-form-input"
+                value={formData.description}
+                onChange={handelInputChange}
+              />
             </div>
 
-            <div class="formbold-mb-3">
-              <label for="skills" class="formbold-form-label">
+            <div className="formbold-mb-3">
+              <label htmlFor="skills" className="formbold-form-label">
                 Skills Required
               </label>
-              <textarea
-                rows="3"
-                name="skills"
-                id="skills"
-                class="formbold-form-input"
-              ></textarea>
+              {formData.skills.map(
+                (skill_i, index) => {
+                  return (
+                    <div className="list-item" key={index}>
+                    <div>{skill_i}</div>
+                    <img onClick={()=>{setFormData({...formData,skills:formData.skills.filter((s,i)=>i!==index)})}} 
+                    className="delete-icon" 
+                    src={deleteImg}
+                    alt="delete"/>
+                    </div>
+                  )
+                }
+              )}
+              <div className="input-with-button">
+                <input
+                  type="text"
+                  name="skills"
+                  id="skills"
+                  className="formbold-form-input"
+                  value={skill}
+                  onChange={(e) => { setSkill(e.target.value) }}
+                ></input>
+                <button className="add-to-list" onClick={(e) => {
+                  e.preventDefault();
+                  setFormData({ ...formData, skills:[...formData.skills,skill]});
+                  setSkill("");
+                }}>ADD</button>
+              </div>
             </div>
-            
-            <div class="formbold-mb-3">
-              <label for="address" class="formbold-form-label"> Address </label>
 
+            <div className="formbold-mb-3">
+              <label htmlFor="address" className="formbold-form-label"> Address </label>
               <input
                 type="text"
-                name="address"
+                name="city"
                 id="address"
                 placeholder="City"
-                class="formbold-form-input formbold-mb-3"
+                className="formbold-form-input formbold-mb-3"
+                value={formData.city}
+                onChange={handelInputChange}
               />
               <input
                 type="text"
-                name="address2"
+                name="state"
                 id="address2"
                 placeholder="State"
-                class="formbold-form-input formbold-mb-3"
+                className="formbold-form-input formbold-mb-3"
+                value={formData.state}
+                onChange={handelInputChange}
               />
 
               <input
                 type="text"
-                name="address3"
+                name="country"
                 id="address3"
                 placeholder="Country"
-                class="formbold-form-input formbold-mb-3"
+                className="formbold-form-input formbold-mb-3"
+                value={formData.country}
+                onChange={handelInputChange}
               />
             </div>
 
-            <div class="formbold-mb-3">
-              <label for="responsibilities" class="formbold-form-label">
+            <div className="formbold-mb-3">
+              <label htmlFor="responsibilities" className="formbold-form-label">
                 Responsibilities of the Employee
               </label>
-              <textarea
-                rows="6"
-                name="responsibilities"
-                id="responsibilities"
-                class="formbold-form-input"
-              ></textarea>
+              {formData.responsibilities.map(
+                (responsibility_i, index) => {
+                  return (
+                    <div className="list-item" key={index}>
+                    <div>{responsibility_i}</div>
+                    <img onClick={()=>{setFormData({...formData,responsibilities:formData.responsibilities.filter((r,i)=>i!==index)})}} 
+                      className="delete-icon" 
+                      src={deleteImg}
+                      alt="delete"/>
+                    </div>
+                  )
+                }
+              )}
+              <div className="input-with-button">
+                <input
+                  type="text"
+                  name="responsibilities"
+                  id="responsibilities"
+                  className="formbold-form-input"
+                  value={responsibility}
+                  onChange={(e) => { setResponsibility(e.target.value) }}
+                ></input>
+                <button className="add-to-list" onClick={(e) => {
+                  e.preventDefault();
+                  setFormData({ ...formData, responsibilities:[...formData.responsibilities,responsibility]});
+                  setResponsibility("");
+                }}>ADD</button>
+              </div>
             </div>
 
-            <div class="formbold-mb-3 formbold-input-flex">
-              <label for="salary" class="formbold-form-label"> Estimated Salary Range </label>
+            <div className="formbold-mb-3 formbold-input-flex">
+              <label htmlFor="salary" className="formbold-form-label"> Estimated Salary Range </label>
 
               <input
                 type="number"
-                name="salary"
+                name="maxsalary"
                 id="salary"
                 placeholder="Min"
-                class="formbold-form-input formbold-mb-3"
+                className="formbold-form-input formbold-mb-3"
+                value={formData.maxsalary}
+                onChange={handelInputChange}
               />
               -
               <input
                 type="number"
-                name="salary2"
+                name="minsalary"
                 id="salary2"
                 placeholder="Max"
-                class="formbold-form-input formbold-mb-3"
+                className="formbold-form-input formbold-mb-3"
+                value={formData.minsalary}
+                onChange={handelInputChange}
               />
             </div>
 
-            <button class="formbold-btn">Upload Now</button>
+            <button type="submit" onClick={handelFormSubmit} className="formbold-btn">Upload Now</button>
           </form>
         </div>
       </div>

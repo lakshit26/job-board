@@ -10,7 +10,6 @@ function Home() {
   const [category, setCategory] = useState("job");
   const [selections, setSelections] = useState([]);
   const [jobs, setJobs] = useState([]);
-  console.log(selections);
 
   function handleCategoryChange(temp) {
     setCategory(temp);

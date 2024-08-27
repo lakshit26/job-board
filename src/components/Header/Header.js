@@ -29,7 +29,7 @@ function Header() {
           </nav>
         </div>
         <div className="site-header__end">
-          <a>Sign in</a>
+          Sign in
         </div>
       </div>
     </header>
